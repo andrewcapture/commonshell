@@ -9,24 +9,24 @@ export PATH
 #===============================================================================================
 clear
 echo"	Install Python-Shadowsocks
-		Author:arnofeng http://www.blogfeng.com"
+		Author:arnofeng www.blogfeng.com"
 echo -n "Enter any key to continue: "  
 read googdmood
 echo -n "set your port: "  
 read key1
-if [ ! key1 ]; then
-	PORT= '2222'
-else
+if[ ! key1 ]; then
 	PORT=key1
+else
+	PORT='2222'
 fi
 echo -n "set your password: " 
 read key2
-if [ ! key2 ]; then
-	PORT= 'blogfeng.com'
+if[ ! key2 ]; then
+	PORT=key2
 else
-	PASS=key2
+	PASS='blogfeng.com'
 fi
-wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
+wget -N --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
 python ez_setup.py --insecure
 easy_install pip
 pip install shadowsocks
@@ -36,7 +36,7 @@ echo "
     "server": "0.0.0.0",
 
     "port_password": {
-             "$PORT": "$PASS"
+             ""$PORT"": ""$PASS""
               
      },
 
