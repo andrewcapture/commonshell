@@ -15,7 +15,7 @@ read googmood
 echo -n "set your port: "  
 read key1
 if [ ! $key1 ]; then
-	PORT='2222'
+	PORT=2222
 else
 	PORT=$key1
 fi
@@ -33,16 +33,16 @@ pip install shadowsocks
 echo "
 {
 
-    "server": "0.0.0.0",
+    \"server\": \"0.0.0.0\",
 
-    "port_password": {
-             "2222": "blogfeng.com"
+    \"port_password\": {
+             \"2222\": \"blogfeng.com\"
               
      },
 
-    "timeout": 300,
+    \"timeout\": 300,
 
-    "method": "aes-256-cfb"
+    \"method\": \"aes-256-cfb\"
 
 }
 
