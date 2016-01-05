@@ -8,21 +8,21 @@ export PATH
 #   Intro:  http://www.blogfeng.com/
 #===============================================================================================
 clear
-echo"	Install Python-Shadowsocks
-		Author:arnofeng www.blogfeng.com"
-echo -n "Enter any key to continue: "  
-read googdmood
+echo -n "Install Python-Shadowsocks
+		Author:arnofeng www.blogfeng.com
+		Enter any key to continue:"
+read googmood
 echo -n "set your port: "  
 read key1
-if[ ! key1 ]; then
-	PORT=key1
+if [ ! $key1 ]; then
+	PORT=$key1
 else
 	PORT='2222'
 fi
 echo -n "set your password: " 
 read key2
-if[ ! key2 ]; then
-	PORT=key2
+if [ ! $key2 ]; then
+	PORT=$key2
 else
 	PASS='blogfeng.com'
 fi
