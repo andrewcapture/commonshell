@@ -9,19 +9,19 @@ export PATH
 #===============================================================================================
 clear
 echo"	Install Python-Shadowsocks
-		Author:arnofeng @http://www.blogfeng.com"
+		Author:arnofeng http://www.blogfeng.com"
 echo -n "Enter any key to continue: "  
 read googdmood
 echo -n "set your port: "  
 read key1
-if[ ! key1 ]; then
+if [ ! key1 ]; then
 	PORT= '2222'
 else
 	PORT=key1
 fi
 echo -n "set your password: " 
 read key2
-if[ ! key2 ]; then
+if [ ! key2 ]; then
 	PORT= 'blogfeng.com'
 else
 	PASS=key2
