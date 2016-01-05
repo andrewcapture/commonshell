@@ -8,10 +8,8 @@ export PATH
 #   Intro:  http://www.blogfeng.com/
 #===============================================================================================
 clear
-echo"
-		Install Python-Shadowsocks
+echo"	Install Python-Shadowsocks
 		Author:arnofeng @http://www.blogfeng.com
-
 "
 echo -n "Enter any key to continue: "  
 read googdmood
