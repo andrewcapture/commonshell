@@ -49,15 +49,15 @@ echo "
 }
 
 " > /etc/shadowsocks.json
-sed -i "s/2222/$PORT/" /etc/shadowsocks.json
-sed -i "s/blogfeng.com/$PASS/" /etc/shadowsocks.json
+sed -i "s#2222#$PORT#g" /etc/shadowsocks.json
+sed -i "s#blogfeng.com#$PASS#g" /etc/shadowsocks.json
+cp -r -f /etc/rc.local /etc/rc.local_ssbak
 AUTO='nohup /usr/local/bin/ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 &'
 cat /etc/rc.local|grep 'exit 0'
 if [ $? -eq 0 ]; then
-    cp -r -f /etc/rc.local /etc/rc.local_sbak
-	sed -i 's/\"exit 0\"/\#/' /etc/rc.local
-	sed -i 's/\#exit 0/\#/' /etc/rc.local
-	sed -i "s/exit 0/$AUTO/" /etc/rc.local
+	sed -i 's/\"exit 0\"/\#/g' /etc/rc.local
+	sed -i 's/\#exit 0/\#/g' /etc/rc.local
+	sed -i "s#exit 0#$AUTO\nexit 0#" /etc/rc.local
 else
 	echo "$AUTO">>/etc/rc.local
 fi
