@@ -8,10 +8,12 @@ export PATH
 #   Intro:  http://www.blogfeng.com/
 #===============================================================================================
 clear
-echo -n "Install Python-Shadowsocks
-		Author:arnofeng www.blogfeng.com
+echo -n "
+		Install Python-Shadowsocks
+		Author:arnofeng @www.blogfeng.com
 		Enter any key to continue:"
-read googmood
+read goodmood
+ssserver -c /etc/shadowsocks.json -d stop
 echo -n "set your port: "  
 read key1
 if [ ! $key1 ]; then
