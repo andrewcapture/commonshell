@@ -15,14 +15,14 @@ read googmood
 echo -n "set your port: "  
 read key1
 if [ ! $key1 ]; then
-	PORT=2222
+	PORT='2222'
 else
 	PORT=$key1
 fi
 echo -n "set your password: " 
 read key2
 if [ ! $key2 ]; then
-	PORT='blogfeng.com'
+	PASS='blogfeng.com'
 else
 	PASS=$key2
 fi
@@ -58,7 +58,7 @@ ssserver -c /etc/shadowsocks.json -d start
 if [ $? -eq 0 ]; then
 	echo "
 	#Everything seems OK!
-	#your PORT is $PORT
+	#your port is $PORT
 	#your password is $PASS
 	#your  encryption is aes-256-cfb
 	#Go try your ss!"
