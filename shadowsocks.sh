@@ -15,16 +15,16 @@ read googmood
 echo -n "set your port: "  
 read key1
 if [ ! $key1 ]; then
-	PORT=$key1
-else
 	PORT='2222'
+else
+	PORT=$key1
 fi
 echo -n "set your password: " 
 read key2
 if [ ! $key2 ]; then
-	PORT=$key2
+	PORT='blogfeng.com'
 else
-	PASS='blogfeng.com'
+	PASS=$key2
 fi
 wget -N --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
 python ez_setup.py --insecure
@@ -36,7 +36,7 @@ echo "
     "server": "0.0.0.0",
 
     "port_password": {
-             ""$PORT"": ""$PASS""
+             "2222": "blogfeng.com"
               
      },
 
@@ -47,6 +47,8 @@ echo "
 }
 
 " > /etc/shadowsocks.json
+sed -i "s/2222/$PORT/" /etc/shadowsocks.json
+sed -i "s/blogfeng.com/$PASS/" /etc/shadowsocks.json
 AUTO='nohup /usr/local/bin/ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 &'
 cp -r -f /etc/rc.local /etc/rc.local_sbak
 sed -i 's/\"exit 0\"/\#/' /etc/rc.local
@@ -58,6 +60,7 @@ if [ $? -eq 0 ]; then
 	#Everything seems OK!
 	#your PORT is $PORT
 	#your password is $PASS
+	#your  encryption is aes-256-cfb
 	#Go try your ss!"
 else
 	echo "
