@@ -60,11 +60,9 @@ password=$(perl -e 'print crypt($ARGV[0], "pwdsalt")' $unpassword)
 	char=`get_char`
 
 if [ ! -f /etc/nginx/conf/$htfile.conf ]; then
-  echo "Create Auth file......"
-cat >/etc/nginx/conf/$htfile.conf<<eof
-$username:$password
-eof
-echo "Create Auth file successful,auth file path:/etc/nginx/conf/$htfile.conf."
+    echo "Create Auth file......"
+	echo "$username:$password">/usr/local/nginx/conf/$htfile.conf
+	echo "Create Auth file successful,auth file path:/usr/local/nginx/conf/$htfile.conf."
 else
 	echo "File already exists,please run this script again."
 	exit 1
