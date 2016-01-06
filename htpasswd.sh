@@ -61,6 +61,7 @@ password=$(perl -e 'print crypt($ARGV[0], "pwdsalt")' $unpassword)
 
 if [ ! -f /etc/nginx/conf/$htfile.conf ]; then
     echo "Create Auth file......"
+	mkdir -p /etc/nginx/conf/
 	touch /etc/nginx/conf/$htfile.conf
 	cat >/etc/nginx/conf/$htfile.conf<<eof
 $username:$password

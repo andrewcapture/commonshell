@@ -11,9 +11,10 @@ common shell for myself
 * chmod 771 ./htpasswd.sh
 * ./htpasswd.sh install
 
-```location /
+``````nginx
+location /
 {
-auth_basic "Authorized users only";
-auth_basic_user_file {$path};
+	auth_basic "Authorized users only";
+	auth_basic_user_file {$path};
 }
 ```
