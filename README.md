@@ -4,3 +4,12 @@ common shell for myself
 * wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/commonshell/master/shadowsocks.sh
 * chmod 771 ./shadowsocks.sh
 * ./shadowsocks.sh install
+## 2.htpasswd for Nginx 
+* wget -N --no-check-certificate https://raw.githubusercontent.com/arnofeng/commonshell/master/htpasswd.sh
+* chmod 771 ./htpasswd.sh
+* ./htpasswd.sh install
+> _location /
+> _{
+> _auth_basic "Authorized users only";
+> _auth_basic_user_file {$path};
+> _}
