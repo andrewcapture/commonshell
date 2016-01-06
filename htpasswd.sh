@@ -66,7 +66,7 @@ if [ ! -f /etc/nginx/conf/$htfile.conf ]; then
 	cat >/etc/nginx/conf/$htfile.conf<<eof
 $username:$password
 eof
-	echo "Create Auth file successful,auth file path:/usr/local/nginx/conf/$htfile.conf."
+	echo "Create Auth file successful,auth file path:/etc/nginx/conf/$htfile.conf."
 else
 	echo "File already exists,please run this script again."
 	exit 1
