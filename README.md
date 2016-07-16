@@ -22,5 +22,8 @@ location /
 ## 4.install vpn for Openvz/Xen(Centos/Debian)
 * for Openvz, before beginning PPTPD install, you should cat follows:
 
-** #cat /dev/net/tun (#cat: /dev/net/tun: File descriptor in bad state)
-** #cat /dev/ppp (#cat: /dev/ppp: No such device or address)
+``````nginx
+#cat /dev/net/tun (#cat: /dev/net/tun: File descriptor in bad state)
+#cat /dev/ppp (#cat: /dev/ppp: No such device or address)
+```
+
